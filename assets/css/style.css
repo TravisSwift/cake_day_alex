@@ -6,8 +6,18 @@ body {
     padding: 20px;
 }
 
+#images {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
 #images img {
     margin: 10px;
+}
+
+h1, h2, p {
+    text-align: center;
 }
 
 .confetti {
@@ -30,4 +40,7 @@ body {
 
 .timer {
     border-style: solid;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
 }

@@ -18,9 +18,13 @@ function updateCountdown() {
 }
 
 function playSoundAndConfetti() {
-    document.getElementById('fanfareAudio').play();
+    const audio = document.getElementById('fanfareAudio');
+    audio.play().catch((error) => {
+        console.error('Audio play error:', error);
+    });
     launchConfetti();
 }
+
 function launchConfetti() {
     const colors = ['#FFD700', '#FF8C00', '#FF6347', '#4682B4', '#32CD32', '#FF69B4', '#800080'];  // Example color set
     for (let i = 0; i < 300; i++) {
@@ -36,7 +40,6 @@ function launchConfetti() {
         setTimeout(() => confetti.remove(), 3000);
     }
 }
-
 
 document.addEventListener('DOMContentLoaded', function () {
     setInterval(updateCountdown, 1000);
